@@ -148,6 +148,9 @@ header {
     max-width: 100px;
 }
 
+
+
+
 .nav {
     position: fixed;
     background: var(--clr-dark);
@@ -392,21 +395,46 @@ header {
     color: var(--clr-light);
     text-align: center;    
 }
-
-.portfolio {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-}
-
 .portfolio__item {
     background: var(--clr-accent);
     overflow: hidden;
+    position: relative; /* Add this line to make the captions relative to the portfolio item */
+}
+
+
+
+
+
+/* .image-caption {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 0.5em;
+    color: white;
+    font-size: 1rem;
+    font-weight: var(--fw-reg);
+    opacity: 0; /* Add this line to initially hide the captions */
+    /* transition: opacity 250ms linear; */
+
+
+.portfolio__item:hover .image-caption,
+.portfolio__item:focus .image-caption {
+    opacity: 1; /* Add this line to show the captions on hover or focus */
+}
+
+ .portfolio {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+} 
+.portfolio__item {
+    position: relative;
 }
 
 .portfolio__img {
-    transition: 
-        transform 750ms cubic-bezier(.5, 0, .5, 1),
-        opacity 250ms linear;
+    transition: transform 750ms cubic-bezier(.5, 0, .5, 1),
+                opacity 250ms linear;
 }
 
 .portfolio__item:focus {
@@ -419,6 +447,20 @@ header {
     transform: scale(1.2);
     opacity: .5;
 }
+
+.image-caption {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
+    padding: 10px;
+    margin: 0;
+    font-size: 14px;
+    line-height: 1.2;
+}
+
 
 
 /* footer */
